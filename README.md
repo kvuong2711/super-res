@@ -11,6 +11,19 @@ Put all the images into ```../test_data/cropped_imgs_png/```, and run SwinSR:
 python main_test_swinir.py --task real_sr --scale 4 --large_model --model_path model_zoo/swinir/003_realSR_BSRGAN_DFOWMFC_s64w8_SwinIR-L_x4_GAN.pth --folder_lq ../test_data/cropped_imgs_png/
 ```
 
+**Extra Results**:
+
+[GCFSR](https://github.com/hejingwenhejingwen/GCFSR):
+
+```
+python inference/inference_gcfsr_blind.py --model_path weights/gcfsr_blind_512.pth --input ../test_data/cropped_imgs_png_upsampled_512/
+```
+
+[SR3](https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement):
+```
+python infer.py -c config/sr_sr3_64_512.json
+```
+
 
 ## SR with Reference Images
 ```
@@ -46,3 +59,4 @@ Run this script to train/inference on ```random.png``` and save results to ```./
 ```
 python run_ZSSR_single_input_with_refs.py ../test_data/cropped_imgs_png/random.png 0 0 0 X8_REAL_CONF ./results/
 ```
+
